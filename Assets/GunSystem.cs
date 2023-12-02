@@ -68,9 +68,10 @@ public class GunSystem : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, whatIsEnemy)) {
             UnityEngine.Debug.Log(rayHit.collider.name);
-            if (rayHit.collider.CompareTag("Player"))
+            if (rayHit.collider.CompareTag("Player")) {
                 UnityEngine.Debug.Log("touché");
-                // rayHit.collider.GetComponent<ShootingAI>().TakeDamage(damage);
+                rayHit.collider.GetComponent<Health>().TakeDamage(damage);
+            }
         }
 
         Instantiate(bulletHoleGraphic, rayHit.point, UnityEngine.Quaternion.Euler(0, 180, 0));

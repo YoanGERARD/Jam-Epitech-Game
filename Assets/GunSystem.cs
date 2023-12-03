@@ -69,12 +69,13 @@ public class GunSystem : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, whatIsEnemy)) {
             UnityEngine.Debug.Log(rayHit.collider.name);
             if (rayHit.collider.CompareTag("Player")) {
-                UnityEngine.Debug.Log("touché");
                 rayHit.collider.GetComponent<Health>().TakeDamage(damage);
             }
         }
 
-        Instantiate(bulletHoleGraphic, rayHit.point, UnityEngine.Quaternion.Euler(0, 180, 0));
+        GameObject obj = Instantiate(bulletHoleGraphic, rayHit.point, UnityEngine. Quaternion.LookRotation(rayHit.normal));
+        obj.transform.position += obj.transform.forward / 1000;
+
         Instantiate(muzzleFlash, attackPoint.position, UnityEngine.Quaternion.identity);
 
         bulletsLeft--;

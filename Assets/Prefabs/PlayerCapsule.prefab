@@ -797,7 +797,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4,
     type: 3}
-  bulletHoleGraphic: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980,
+  bulletHoleGraphic: {fileID: 1892110759664652431, guid: 8aa4bcd929bb6cd4fa334360acf8729e,
     type: 3}
   text: {fileID: 6129168886298885036}
 --- !u!4 &5317877511487785111 stripped
